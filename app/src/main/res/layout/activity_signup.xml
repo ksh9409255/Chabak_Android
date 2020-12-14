@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
+    android:windowSoftInputMode="adjustResize|adjustPan"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="93dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_back"
+            app:srcCompat="@drawable/logo_primary" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="닉네임"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_logo" />
+
+        <EditText
+            android:id="@+id/edt_nickname"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rec_light_gray_5dp"
+            android:ems="10"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:hint="닉네임"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="아이디"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/edt_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nickname" />
+
+        <TextView
+            android:id="@+id/tv_id_empty_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="아이디를 입력해주세요"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/edt_id"
+            app:layout_constraintStart_toEndOf="@+id/tv_id" />
+
+        <EditText
+            android:id="@+id/edt_id"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rec_light_gray_5dp"
+            android:ems="10"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:hint="아이디"
+            android:inputType="textPersonName|textEmailSubject"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="70dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+
+        <Button
+            android:id="@+id/btn_id_check"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="58dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@null"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:foreground="@drawable/rec_primary_transp_10dp"
+            android:text="중복확인"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_id"
+            app:layout_constraintEnd_toEndOf="@+id/edt_id"
+            app:layout_constraintTop_toTopOf="@+id/edt_id" />
+
+        <TextView
+            android:id="@+id/tv_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="비밀번호"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/edt_id"
+            app:layout_constraintTop_toBottomOf="@+id/edt_id" />
+
+        <EditText
+            android:id="@+id/edt_pw"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rec_light_gray_5dp"
+            android:ems="10"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_pw"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pw" />
+
+        <TextView
+            android:id="@+id/tv_pw_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="비밀번호확인"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/edt_pw"
+            app:layout_constraintTop_toBottomOf="@+id/edt_pw" />
+
+        <TextView
+            android:id="@+id/tv_pw_check_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="비밀번호가 일치하지 않습니다"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/edt_pw_check"
+            app:layout_constraintStart_toEndOf="@+id/tv_pw_check" />
+
+        <EditText
+            android:id="@+id/edt_pw_check"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rec_light_gray_5dp"
+            android:ems="10"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:hint="비밀번호확인"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_pw_check"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pw_check" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="성별"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/edt_pw_check"
+            app:layout_constraintTop_toBottomOf="@+id/edt_pw_check" />
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/tv_gender"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender">
+
+            <RadioButton
+                android:id="@+id/rb_gender_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:fontFamily="@font/nanum_barun_gothic_regular"
+                android:text="남성"
+                android:textColor="@color/colorSubIcon"
+                android:textSize="12.5sp" />
+
+            <RadioButton
+                android:id="@+id/rb_gender_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:fontFamily="@font/nanum_barun_gothic_regular"
+                android:text="여성"
+                android:textColor="@color/colorSubIcon"
+                android:textSize="12.5sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="생년월일"
+            android:textColor="@color/colorSubIcon"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/rg_gender"
+            app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+        <EditText
+            android:id="@+id/edt_birth"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rec_light_gray_5dp"
+            android:ems="10"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:hint="1999-01-01"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_birth"
+            app:layout_constraintTop_toBottomOf="@+id/tv_birth" />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rec_primary_10dp"
+            android:fontFamily="@font/nanum_barun_gothic_regular"
+            android:text="회원가입"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_birth" />
+
+        <ImageView
+            android:id="@+id/img_id_check"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_id"
+            app:layout_constraintStart_toEndOf="@+id/tv_id"
+            app:layout_constraintTop_toTopOf="@+id/tv_id"
+            app:srcCompat="@drawable/checked" />
+
+        <ImageView
+            android:id="@+id/img_pw_check"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_pw_check"
+            app:layout_constraintStart_toEndOf="@+id/tv_pw_check"
+            app:layout_constraintTop_toTopOf="@+id/tv_pw_check"
+            app:srcCompat="@drawable/checked" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
